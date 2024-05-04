@@ -1,9 +1,26 @@
 #language: pt
 
-Funcionalidade: Cadastro de Usuário 
+Funcionalidade: Listar usuário
+Como visitante do portal Raro CRUD Front-end
+Quero ter acesso a lista de usuários cadastrados
+Para visualizar as informações de usuários no banco de dados do portal
 
-Dado que acesse a funcionalidade de Cadastro
-Quando informar  um novo nome 
-E informar um novo e-mail
-E confirmar a operação 
-Então o usuário deverá ser cadastrado
+Dado 
+Quando 
+E 
+Então 
+
+Dado 
+Quando 
+E 
+Então 
+
+Dado 
+Quando 
+E 
+Então 
+
+Dado 
+Quando 
+E 
+Então 
