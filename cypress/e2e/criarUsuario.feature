@@ -8,7 +8,7 @@ Para me cadastrar no banco de dados do portal
 Contexto: Proceder criação de novo usuário
 Dado que eu acesse a página de criação de novo usuário no Portal Raro CRUD
 
-Cenário: Autenticação válida
+Cenário: Cadastrar usuário
 Quando eu informar um novo "nome"
 E informar um novo "email"
 E confirmar a operação
