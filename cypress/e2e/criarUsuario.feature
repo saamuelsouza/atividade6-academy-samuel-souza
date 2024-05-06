@@ -1,7 +1,7 @@
 #language: pt
 
 Funcionalidade: Criar usuário
-Como visitante do portal Raro CRUD 
+Como visitante do portal Raro CRUD
 Quero poder acessar a página de novo usuário
 Para me cadastrar no banco de dados do portal
 
