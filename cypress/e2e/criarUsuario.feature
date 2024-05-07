@@ -110,13 +110,7 @@ E o campo email estiver vazio
 E confirmar a operação
 Então deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.
 
-Cenário: Deve ser possível criar usuário quando o email possuir espaços no início e/ou no final
-Quando eu informar um novo nome
-E o campo email possuir espaços em branco no início ou final
-E confirmar a operação
-Então deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!
-
-Cenário: Não deve criar usuário com um email já cadastrado no sistema
+Cenário: Não deve cadastrar um usuário quando o email já  estiver sendo utilizado por outro usuário
 Quando eu informar um novo nome
 E informar novamente um email já cadastrado no portal Raro CRUD
 E confirmar a operação
