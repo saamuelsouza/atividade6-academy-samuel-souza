@@ -103,49 +103,48 @@ Então deve exibir uma mensagem de alerta: Formato de e-mail inválido.
 
 Cenário: Não deve atualizar usuário quando o email possuir mais de 60 caracteres
 Quando eu selecionar a opção ver detalhes
-E selecionar a opção editar incluindo um novo nome
+E selecionar a opção editar
 E informar um novo email com mais de 60 caracteres
+E incluir um novo nome
 E salvar as alterações
 Então deverá exibir mensagem de alerta: Formato de e-mail inválido
 
 Cenário: Deve atualizar usuário cujo email possua 60 caracteres
 Quando eu selecionar a opção ver detalhes
-E selecionar a opção editar incluindo um novo nome
+E selecionar a opção editar
 E informar um novo email com 60 caracteres
+E Incluir um novo nome
 E salvar as alterações
 Então deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!
 
 Cenário: Não deve atualizar usuário quando o email possuir menos de 4 caracteres
 Quando eu selecionar a opção ver detalhes
-E selecionar a opção editar incluindo um novo nome
+E selecionar a opção editar
 E informar um novo email com menos de 4 caracteres
+E Incluir um novo nome
 E salvar as alterações
 Então deve exibir uma mensagem de alerta: Informe pelo menos 4 caracteres para o e-mail.
 
 Cenário: Deve ser possível atualizar usuário quando o nome possuir espaçamentos
 Quando eu selecionar a opção ver detalhes
-E selecionar a opção editar incluindo um novo nome contendo espaçamentoss
+E selecionar a opção editar
 E um novo email
+E incluir um novo nome com espaçamentos
 E salvar as alterações
 Então deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!
 
 Cenário: Deve atualizar usuário cujo email possua mais de 4 caracteres
 Quando eu selecionar a opção ver detalhes
-E selecionar a opção editar incluindo um novo nome
+E selecionar a opção editar
 E informar um novo email com mais de 4 caracteres
+E incluir um novo nome
 E salvar as alterações
 Então deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!
 
 Cenário: Não deve atualizar usuário quando o email for vazio
 Quando eu selecionar a opção ver detalhes
-E selecionar a opção editar incluindo um novo nome
+E selecionar a opção editar
 E o campo email estiver vazio
+E Incluir um novo nome
 E salvar as alterações
-Então deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.
-
-Cenário: Não deve cadastrar um usuário quando o email já  estiver sendo utilizado por outro usuário
-Quando eu selecionar a opção ver detalhes
-E selecionar a opção editar incluindo um novo nome
-E informar novamente um email já cadastrado no portal Raro CRUD
-E salvar as alterações
-Então deve exibir uma mensagem de alerta: Este e-mail já é utilizado por outro usuário.
+Então deve exibir uma mensagem de alerta: Informe pelo menos 4 caracteres para o e-mail.

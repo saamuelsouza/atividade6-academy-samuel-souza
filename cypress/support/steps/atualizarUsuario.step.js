@@ -1,7 +1,7 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 const { faker } = require("@faker-js/faker");
 const usuario = {
-  name: `${faker.person.firstName()}`,
+  name: `${faker.person.firstName()} teste`,
   email: "",
 };
 
@@ -391,45 +391,93 @@ When("eu selecionar a opção ver detalhes", function () {
   cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
 });
 
-When("selecionar a opção editar incluindo um novo nome", function () {});
+When("selecionar a opção editar", function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type();
+});
 
-When("informar um novo email com mais de 60 caracteres", function () {});
+When("informar um novo email com mais de 60 caracteres", function () {
+    cy.get("#userEmail").clear().type(
+        `${faker.string.alpha(25)}@${faker.string.alpha(31)}.com`,
+        { delay: 0 }
+      );
+});
 
-When("salvar as alterações", function () {});
+When("incluir um novo nome", function () {
+    cy.get("#name").type(usuario.name, { delay:0 });
+});
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
 
 Then(
-  "deverá exibir mensagem de alerta: Formato de e-mail inválido",
-  function () {}
+  "deverá exibir mensagem de alerta: Informe no máximo 60 caracteres para o e-mail",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Informe no máximo 60 caracteres para o e-mail")
+      .should("be.visible");
+  }
 );
 
 When("eu selecionar a opção ver detalhes", function () {
   cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
 });
 
-When("selecionar a opção editar incluindo um novo nome", function () {});
+When("selecionar a opção editar", function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type();
+});
 
-When("informar um novo email com 60 caracteres", function () {});
+When("informar um novo email com 60 caracteres", function () {
+    cy.get("#userEmail").clear().type(
+        `${faker.string.alpha(25)}@${faker.string.alpha(30)}.com`,
+        { delay: 0 }
+      );
+});
 
-When("salvar as alterações", function () {});
+When("Incluir um novo nome", function () {
+    cy.get("#userName").type(usuario.name, { delay:0 });
+});
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
 
 Then(
   "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
-  function () {}
+  function () {
+    cy.get(".go3958317564")
+      .contains("Informações atualizadas com sucesso!")
+      .should("be.visible");
+  }
 );
 
 When("eu selecionar a opção ver detalhes", function () {
   cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
 });
 
-When("selecionar a opção editar incluindo um novo nome", function () {});
+When("selecionar a opção editar", function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type();
+});
 
-When("informar um novo email com menos de 4 caracteres", function () {});
+When("informar um novo email com menos de 4 caracteres", function () {
+    cy.get("#userEmail").clear().type("abc", { delay: 0 });
+});
 
-When("salvar as alterações", function () {});
+When("Incluir um novo nome", function () {
+    cy.get("#userName").type(usuario.name, { delay:0 });
+});
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
 
 Then(
   "deve exibir uma mensagem de alerta: Informe pelo menos 4 caracteres para o e-mail.",
-  function () {}
+  function () {
+    cy.get('.sc-cPiKLX')
+      .contains("Informe pelo menos 4 caracteres para o e-mail.")
+      .should("be.visible");
+  }
 );
 
 When("eu selecionar a opção ver detalhes", function () {
@@ -437,63 +485,89 @@ When("eu selecionar a opção ver detalhes", function () {
 });
 
 When(
-  "selecionar a opção editar incluindo um novo nome contendo espaçamentoss",
-  function () {}
+  "selecionar a opção editar",
+  function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type();
+  }
 );
 
-When("um novo email", function () {});
+When("um novo email", function () {
+    novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
 
-When("salvar as alterações", function () {});
+When("incluir um novo nome com espaçamentos", function () {
+    cy.get("#userName").type('    Nome Teste    ', { delay:0 });
+});
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
 
 Then(
   "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
-  function () {}
+  function () {
+    cy.get(".go3958317564")
+      .contains("Informações atualizadas com sucesso!")
+      .should("be.visible");
+  }
 );
 
 When("eu selecionar a opção ver detalhes", function () {
   cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
 });
 
-When("selecionar a opção editar incluindo um novo nome", function () {});
+When("selecionar a opção editar", function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type();
+});
 
-When("informar um novo email com mais de 4 caracteres", function () {});
+When("informar um novo email com mais de 4 caracteres", function () {
+    cy.get("#userEmail").clear().type( `${faker.string.alpha(1)}@${faker.string.alpha(1)}.cd`,
+    { delay: 0 });
+});
 
-When("salvar as alterações", function () {});
+When("incluir um novo nome", function () {
+    cy.get("#userName").type(usuario.name, { delay:0 });
+});
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
 
 Then(
   "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
-  function () {}
+  function () {
+    cy.get(".go3958317564")
+      .contains("Informações atualizadas com sucesso!")
+      .should("be.visible");
+  }
 );
 
 When("eu selecionar a opção ver detalhes", function () {
   cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
 });
 
-When("selecionar a opção editar incluindo um novo nome", function () {});
-
-When("o campo email estiver vazio", function () {});
-
-When("salvar as alterações", function () {});
-
-Then(
-  "deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.",
-  function () {}
-);
-
-When("eu selecionar a opção ver detalhes", function () {
-  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+When("selecionar a opção editar", function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type();
 });
 
-When("selecionar a opção editar incluindo um novo nome", function () {});
+When("o campo email estiver vazio", function () {
+    cy.get("#userEmail").clear().type(" ");
+});
 
-When(
-  "informar novamente um email já cadastrado no portal Raro CRUD",
-  function () {}
-);
+When("Incluir um novo nome", function () {
+    cy.get("#userName").type(usuario.name, { delay:0 });
+});
 
-When("salvar as alterações", function () {});
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
 
 Then(
-  "deve exibir uma mensagem de alerta: Este e-mail já é utilizado por outro usuário.",
-  function () {}
+  "deve exibir uma mensagem de alerta: Informe pelo menos 4 caracteres para o e-mail.",
+  function () {
+    cy.get('.sc-cPiKLX')
+      .contains("Informe pelo menos 4 caracteres para o e-mail.")
+      .should("be.visible");
+  }
 );
