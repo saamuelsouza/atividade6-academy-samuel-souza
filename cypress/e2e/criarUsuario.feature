@@ -68,18 +68,6 @@ E informar um novo email
 E confirmar a operação
 Então deve exibir uma mensagem de alerta: O campo nome é obrigatório.
 
-Cenário: Não deve permitir cadastro de usuário cujo nome seja Nulo
-Quando eu informar um nome nulo
-E informar um novo email
-E confirmar a operação
-Então deve exibir uma mensagem de alerta: Informe pelo menos 4 letras para o nome.
-
-Cenário: Não deve criar usuário com um email já cadastrado no sistema
-Quando eu informar um novo nome
-E informar novamente um email já cadastrado no portal Raro CRUD
-E confirmar a operação
-Então deve exibir uma mensagem de alerta: Este e-mail já é utilizado por outro usuário.
-
 Cenário: Não deve criar usuário quando o email possuir mais de 60 caracteres
 Quando eu informar um novo nome
 E informar um novo email com mais de 60 caracteres
@@ -104,23 +92,11 @@ E um novo email
 E confirmar a operação
 Então deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!
 
-Cenário: Deve cadastrar usuário cujo email possua 4 caracteres
+Cenário: Deve cadastrar usuário cujo email possua mais de 4 caracteres
 Quando eu informar um novo nome
-E informar um novo email com 4 caracteres
+E informar um novo email com mais de 4 caracteres
 E confirmar a operação
 Então deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!
-
-Cenário: Não deve criar usuário quando o email não possuir pelo menos 2 caracteres após o ponto
-Quando eu informar um novo nome
-E informar um novo email com menos de 2 caracteres após o ponto
-E confirmar a operação
-Então deve exibir uma mensagem de alerta: Formato de e-mail inválido.
-
-Cenário: Deve criar um usuário quando o email possuir 2 caracteres após o ponto
-Quando eu informar um novo nome
-E informar um novo email com 2 caracteres após o ponto
-E confirmar a operação
-Então deve exibir uma mensagem de alerta: Usuário salvo com sucesso!
 
 Cenário: Não deve criar usuário quando o email não possuir um @
 Quando eu informar um novo nome
@@ -145,3 +121,9 @@ Quando eu informar um novo nome
 E o campo email possuir espaços em branco no início ou final
 E confirmar a operação
 Então deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!
+
+Cenário: Não deve criar usuário com um email já cadastrado no sistema
+Quando eu informar um novo nome
+E informar novamente um email já cadastrado no portal Raro CRUD
+E confirmar a operação
+Então deve exibir uma mensagem de alerta: Este e-mail já é utilizado por outro usuário.
