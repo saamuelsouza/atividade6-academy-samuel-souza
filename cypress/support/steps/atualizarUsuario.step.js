@@ -13,21 +13,487 @@ beforeEach(() => {
   });
 });
 
-When("eu selecionar a opção ver detalhes", function () {});
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
 
-When("selecionar a opção editar", function () {});
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').click();
+});
 
-When("editar o nome do usuário", function () {});
+When("editar o email do usuário", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
 
-When("editar o email do usuário", function () {});
+When("incluir um novo nome", function () {
+  cy.get("#userName").clear().type(usuario.name, { delay: 0 });
+});
+
+When("salvar as alterações", function () {
+  cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deverá retornar uma mensagem: Informações atualizadas com sucesso!",
+  function () {
+    cy.get(".go3958317564")
+      .contains("Informações atualizadas com sucesso!")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').click();
+});
+
+When("selecionar a opção salvar", function () {
+  cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deverá retornar uma mensagem: Informações atualizadas com sucesso!",
+  function () {
+    cy.get(".go3958317564")
+      .contains("Informações atualizadas com sucesso!")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When(
+  "selecionar a opção editar incluindo um nome com mais de 100 caracteres",
+  function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type(`${faker.string.alpha(101)}`, {
+      delay: 0,
+    });
+  }
+);
+
+When("informar um novo email", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When("salvar as alterações", function () {
+  cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Informe no máximo 100 caracteres para o nome",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Informe no máximo 100 caracteres para o nome")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When("informar um novo nome com 100 caracteres", function () {
+  cy.get("#userName")
+    .clear()
+    .type(`${faker.string.alpha(100)}`, {
+      delay: 0,
+    });
+});
+
+When("salvar as alterações", function () {
+  cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  function () {
+    cy.get(".go3958317564")
+      .contains("Informações atualizadas com sucesso!")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When("incluir um novo nome com menos de 4 caracteres", function () {
+  cy.get("#userName")
+    .clear()
+    .type(`${faker.string.alpha(3)}`, {
+      delay: 0,
+    });
+});
+
+When("salvar as alterações", function () {
+  cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Informe pelo menos 4 letras para o nome",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Informe pelo menos 4 letras para o nome.")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When("incluir um novo nome com 4 caracteres", function () {
+  cy.get("#userName")
+    .clear()
+    .type(`${faker.string.alpha(4)}`, {
+      delay: 0,
+    });
+});
+
+When("salvar as alterações", function () {
+  cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  function () {
+    cy.get(".go3958317564")
+      .contains("Informações atualizadas com sucesso!")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When("incluir um novo nome com caracteres numéricos", function () {
+  cy.get("#userName").clear().type("12345", {
+    delay: 0,
+  });
+});
+
+When("salvar as alterações", function () {
+  cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Formato do nome é inválido.",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Formato do nome é inválido.")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When("incluir um novo nome com caracteres alfanuméricos", function () {
+  cy.get("#userName").clear().type("a1b2c3d4e5", {
+    delay: 0,
+  });
+});
+
+When("salvar as alterações", function () {
+  cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Formato do nome é inválido.",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Formato do nome é inválido.")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When("incluir um novo nome com caracteres especiais", function () {
+  cy.get("#userName").clear().type("#$%¨&*@#&", {
+    delay: 0,
+  });
+});
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Formato do nome é inválido.",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Formato do nome é inválido.")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+  cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email", function () {
+  novoEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When(
+  "incluir um novo nome com caracteres comuns e especiais juntos",
+  function () {
+    cy.get("#userName").clear().type("a#b$c%d¨e&f*g@h#i&j", {
+      delay: 0,
+    });
+  }
+);
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Formato do nome é inválido.",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Formato do nome é inválido.")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email", function () {
+    novoEmail = faker.internet.email();
+    cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+});
+
+When("deixar o campo nome vazio", function () {
+    cy.get("#userName").clear().type(" ");
+});
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Informe pelo menos 4 letras para o nome.",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Informe pelo menos 4 letras para o nome.")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar", function () {
+    cy.get('[type="button"] > .sc-dAlyuH').type();
+});
+
+When("informar um novo email sem a presença de um @", function () {
+    cy.get("#userEmail").clear().type("faltaarroba.com", { delay: 0 });
+});
+
+When("incluir um novo nome", function () {
+    cy.get("#name").type(usuario.name, { delay:0 });
+});
+
+When("salvar as alterações", function () {
+    cy.get(".dGvNqp > .sc-dAlyuH").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Formato de e-mail inválido.",
+  function () {
+    cy.get(".sc-cPiKLX")
+      .contains("Formato de e-mail inválido")
+      .should("be.visible");
+  }
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar incluindo um novo nome", function () {});
+
+When("informar um novo email com mais de 60 caracteres", function () {});
 
 When("salvar as alterações", function () {});
 
-Then("deve retornar uma mensagem: Informações atualizadas com sucesso!", function () {});
+Then(
+  "deverá exibir mensagem de alerta: Formato de e-mail inválido",
+  function () {}
+);
 
-When("eu selecionar a opção ver detalhes", function () {});
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
 
-When("selecionar a opção salvar", function () {});
+When("selecionar a opção editar incluindo um novo nome", function () {});
 
-Then("deverá retornar uma mensagem: Informações atualizadas com sucesso!", function () {});
+When("informar um novo email com 60 caracteres", function () {});
 
+When("salvar as alterações", function () {});
+
+Then(
+  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  function () {}
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar incluindo um novo nome", function () {});
+
+When("informar um novo email com menos de 4 caracteres", function () {});
+
+When("salvar as alterações", function () {});
+
+Then(
+  "deve exibir uma mensagem de alerta: Informe pelo menos 4 caracteres para o e-mail.",
+  function () {}
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When(
+  "selecionar a opção editar incluindo um novo nome contendo espaçamentoss",
+  function () {}
+);
+
+When("um novo email", function () {});
+
+When("salvar as alterações", function () {});
+
+Then(
+  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  function () {}
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar incluindo um novo nome", function () {});
+
+When("informar um novo email com mais de 4 caracteres", function () {});
+
+When("salvar as alterações", function () {});
+
+Then(
+  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  function () {}
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar incluindo um novo nome", function () {});
+
+When("o campo email estiver vazio", function () {});
+
+When("salvar as alterações", function () {});
+
+Then(
+  "deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.",
+  function () {}
+);
+
+When("eu selecionar a opção ver detalhes", function () {
+  cy.get(":nth-child(1) > .sc-feUZmu > #userDataDetalhe").eq(0).click();
+});
+
+When("selecionar a opção editar incluindo um novo nome", function () {});
+
+When(
+  "informar novamente um email já cadastrado no portal Raro CRUD",
+  function () {}
+);
+
+When("salvar as alterações", function () {});
+
+Then(
+  "deve exibir uma mensagem de alerta: Este e-mail já é utilizado por outro usuário.",
+  function () {}
+);
