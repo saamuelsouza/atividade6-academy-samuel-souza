@@ -241,6 +241,25 @@ Then(
 );
 
 When("eu informar um novo nome", function () {
+    cy.get("#name").type(usuario.name);
+});
+
+When("informar um novo email sem a presença de um @", function () {
+    cy.get("#email").type("faltaarroba.com",{ delay: 0 });
+});
+
+When("confirmar a operação", function () {
+    cy.get("button[type='submit']").click();
+});
+
+Then(
+  "deve exibir uma mensagem de alerta: Formato de e-mail inválido.",
+  function () {
+      cy.get(".sc-cPiKLX").contains("Formato de e-mail inválido").should('be.visible');
+  }
+);
+
+When("informar um novo nome", function () {
   cy.get("#name").type(usuario.name, { delay: 0 });
 });
 
@@ -254,9 +273,9 @@ When("confirmar a operação", function () {
   cy.get("button[type='submit']").click();
 });
 
-Then("deve exibir uma mensagem de alerta: Formato de e-mail inválido.",
+Then("deverá exibir mensagem de alerta: Formato de e-mail inválido",
   function () {
-    cy.get(".sc-jEACwC")
+    cy.get(".sc-cPiKLX")
       .contains("Informe no máximo 60 caracteres para o e-mail")
       .should("be.visible");
   }
@@ -354,8 +373,9 @@ When("eu informar um novo nome", function () {
     cy.get("#name").type(usuario.name);
 });
 
-When("informar um novo email sem a presença de um @", function () {
-    cy.get("#email").type("faltandoarroba.com",{ delay: 0 });
+When("o campo email estiver vazio", function () {
+    cy.get("#email").type(" ",{ delay: 0 }
+      );
 });
 
 When("confirmar a operação", function () {
@@ -363,48 +383,36 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Formato de e-mail inválido.",
+  "deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.",
   function () {
-    cy.get('.sc-jEACwC')
-      .contains("Formato de e-mail inválido.")
-      .should("be.visible");
+    cy.get('.sc-cPiKLX').contains("O campo e-mail é obrigatório.")
+    .should("be.visible");
   }
 );
 
-When("eu informar um novo nome", function () {});
-
-When("informar um novo email nulo", function () {});
-
-When("confirmar a operação", function () {});
-
-Then(
-  "deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.",
-  function () {}
-);
-
-When("eu informar um novo nome", function () {});
-
-When("o campo email estiver vazio", function () {});
-
-When("confirmar a operação", function () {});
-
-Then(
-  "deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.",
-  function () {}
-);
-
-When("eu informar um novo nome", function () {});
+When("eu informar um novo nome", function () {
+    cy.get("#name").type(usuario.name);
+});
 
 When(
   "o campo email possuir espaços em branco no início ou final",
-  function () {}
+  function () {
+    cy.get("#email").type("   teste@teste.com   ",{ delay: 0 }
+      );
+  }
 );
 
-When("confirmar a operação", function () {});
+When("confirmar a operação", function () {
+    cy.get("button[type='submit']").click();
+});
 
 Then(
   "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
-  function () {}
+  function () {
+    cy.get(".go3958317564")
+      .contains("Usuário salvo com sucesso!")
+      .should("be.visible");
+  }
 );
 
 When("eu informar um novo nome", function () {

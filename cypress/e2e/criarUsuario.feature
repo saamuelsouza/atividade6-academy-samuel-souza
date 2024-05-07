@@ -68,11 +68,17 @@ E informar um novo email
 E confirmar a operação
 Então deve exibir uma mensagem de alerta: O campo nome é obrigatório.
 
-Cenário: Não deve criar usuário quando o email possuir mais de 60 caracteres
+Cenário: Não deve criar usuário quando o email não possuir um @
 Quando eu informar um novo nome
-E informar um novo email com mais de 60 caracteres
+E informar um novo email sem a presença de um @
 E confirmar a operação
 Então deve exibir uma mensagem de alerta: Formato de e-mail inválido.
+
+Cenário: Não deve criar usuário quando o email possuir mais de 60 caracteres
+Quando informar um novo nome 
+E informar um novo email com mais de 60 caracteres
+E confirmar a operação
+Então deverá exibir mensagem de alerta: Formato de e-mail inválido
 
 Cenário: Deve cadastrar usuário cujo email possua 60 caracteres
 Quando eu informar um novo nome
@@ -97,18 +103,6 @@ Quando eu informar um novo nome
 E informar um novo email com mais de 4 caracteres
 E confirmar a operação
 Então deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!
-
-Cenário: Não deve criar usuário quando o email não possuir um @
-Quando eu informar um novo nome
-E informar um novo email sem a presença de um @
-E confirmar a operação
-Então deve exibir uma mensagem de alerta: Formato de e-mail inválido.
-
-Cenário: Não deve criar usuário quando o email for nulo
-Quando eu informar um novo nome
-E informar um novo email nulo
-E confirmar a operação
-Então deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.
 
 Cenário: Não deve criar usuário quando o email for vazio
 Quando eu informar um novo nome
