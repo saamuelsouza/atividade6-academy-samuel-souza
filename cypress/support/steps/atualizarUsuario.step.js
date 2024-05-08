@@ -1,3 +1,5 @@
+import AtualizarPage from "../page/atualizar.page"
+const paginaAtualizar = new AtualizarPage
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 const { faker } = require("@faker-js/faker");
 const usuario = {
@@ -5,7 +7,7 @@ const usuario = {
   email: "",
 };
 
-var novoEmail;
+var newEmail;
 
 beforeEach(() => {
   Given("que eu acesse a lista de usuários do portal Raro CRUD", function () {
@@ -22,16 +24,16 @@ When("selecionar a opção editar", function () {
 });
 
 When("editar o email do usuário", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("incluir um novo nome", function () {
-  cy.get("#userName").clear().type(usuario.name, { delay: 0 });
+paginaAtualizar.typeNome(usuario.name)
 });
 
 When("salvar as alterações", function () {
-  cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -52,7 +54,7 @@ When("selecionar a opção editar", function () {
 });
 
 When("selecionar a opção salvar", function () {
-  cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -78,12 +80,12 @@ When(
 );
 
 When("informar um novo email", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("salvar as alterações", function () {
-  cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -104,8 +106,8 @@ When("selecionar a opção editar", function () {
 });
 
 When("informar um novo email", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("informar um novo nome com 100 caracteres", function () {
@@ -117,7 +119,7 @@ When("informar um novo nome com 100 caracteres", function () {
 });
 
 When("salvar as alterações", function () {
-  cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -138,8 +140,8 @@ When("selecionar a opção editar", function () {
 });
 
 When("informar um novo email", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("incluir um novo nome com menos de 4 caracteres", function () {
@@ -151,7 +153,7 @@ When("incluir um novo nome com menos de 4 caracteres", function () {
 });
 
 When("salvar as alterações", function () {
-  cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -172,8 +174,8 @@ When("selecionar a opção editar", function () {
 });
 
 When("informar um novo email", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("incluir um novo nome com 4 caracteres", function () {
@@ -185,7 +187,7 @@ When("incluir um novo nome com 4 caracteres", function () {
 });
 
 When("salvar as alterações", function () {
-  cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -206,8 +208,8 @@ When("selecionar a opção editar", function () {
 });
 
 When("informar um novo email", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("incluir um novo nome com caracteres numéricos", function () {
@@ -217,7 +219,7 @@ When("incluir um novo nome com caracteres numéricos", function () {
 });
 
 When("salvar as alterações", function () {
-  cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -238,8 +240,8 @@ When("selecionar a opção editar", function () {
 });
 
 When("informar um novo email", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("incluir um novo nome com caracteres alfanuméricos", function () {
@@ -249,7 +251,7 @@ When("incluir um novo nome com caracteres alfanuméricos", function () {
 });
 
 When("salvar as alterações", function () {
-  cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -270,8 +272,8 @@ When("selecionar a opção editar", function () {
 });
 
 When("informar um novo email", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("incluir um novo nome com caracteres especiais", function () {
@@ -281,7 +283,7 @@ When("incluir um novo nome com caracteres especiais", function () {
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -302,8 +304,8 @@ When("selecionar a opção editar", function () {
 });
 
 When("informar um novo email", function () {
-  novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When(
@@ -316,7 +318,7 @@ When(
 );
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -337,8 +339,8 @@ When("selecionar a opção editar", function () {
 });
 
 When("informar um novo email", function () {
-    novoEmail = faker.internet.email();
-    cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+    cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("deixar o campo nome vazio", function () {
@@ -346,7 +348,7 @@ When("deixar o campo nome vazio", function () {
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -371,11 +373,11 @@ When("informar um novo email sem a presença de um @", function () {
 });
 
 When("incluir um novo nome", function () {
-    cy.get("#name").type(usuario.name, { delay:0 });
+  paginaAtualizar.typeNome(usuario.name)
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -403,11 +405,11 @@ When("informar um novo email com mais de 60 caracteres", function () {
 });
 
 When("incluir um novo nome", function () {
-    cy.get("#name").type(usuario.name, { delay:0 });
+  paginaAtualizar.typeNome(usuario.name)
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -435,11 +437,11 @@ When("informar um novo email com 60 caracteres", function () {
 });
 
 When("Incluir um novo nome", function () {
-    cy.get("#userName").type(usuario.name, { delay:0 });
+  paginaAtualizar.typeNome(usuario.name)
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -464,11 +466,11 @@ When("informar um novo email com menos de 4 caracteres", function () {
 });
 
 When("Incluir um novo nome", function () {
-    cy.get("#userName").type(usuario.name, { delay:0 });
+  paginaAtualizar.typeNome(usuario.name)
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -492,8 +494,8 @@ When(
 );
 
 When("um novo email", function () {
-    novoEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(novoEmail, { delay: 0 });
+  newEmail = faker.internet.email();
+  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
 });
 
 When("incluir um novo nome com espaçamentos", function () {
@@ -501,7 +503,7 @@ When("incluir um novo nome com espaçamentos", function () {
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -527,11 +529,11 @@ When("informar um novo email com mais de 4 caracteres", function () {
 });
 
 When("incluir um novo nome", function () {
-    cy.get("#userName").type(usuario.name, { delay:0 });
+  paginaAtualizar.typeNome(usuario.name)
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(
@@ -556,11 +558,11 @@ When("o campo email estiver vazio", function () {
 });
 
 When("Incluir um novo nome", function () {
-    cy.get("#userName").type(usuario.name, { delay:0 });
+  paginaAtualizar.typeNome(usuario.name)
 });
 
 When("salvar as alterações", function () {
-    cy.get(".dGvNqp > .sc-dAlyuH").click();
+  paginaAtualizar.clickButtonSalvar()
 });
 
 Then(

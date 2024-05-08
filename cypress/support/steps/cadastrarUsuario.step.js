@@ -1,7 +1,7 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 const { faker } = require("@faker-js/faker");
 const usuario = {
-  name: `${faker.person.firstName()}`,
+  name: `${faker.person.firstName()} Teste`,
   email: "",
 };
 
@@ -18,13 +18,13 @@ beforeEach(() => {
   );
 });
 
-When("informar um novo nome", function () {
+When("informar o novo nome", function () {
   cy.get("#name").type(usuario.name, { delay: 0 });
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail, { delay: 0 });
+  cy.get("#email").type(novoEmail);
 });
 
 When("confirmar a operação", function () {
