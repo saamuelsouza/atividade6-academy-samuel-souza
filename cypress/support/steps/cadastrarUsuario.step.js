@@ -1,3 +1,5 @@
+import CadastrarPage from "../page/cadastrar.page";
+const paginaCadastrar = new CadastrarPage
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 const { faker } = require("@faker-js/faker");
 const usuario = {
@@ -11,20 +13,19 @@ beforeEach(() => {
   Given(
     "que acessei a página de criação de novo usuário no Portal Raro CRUD",
     function () {
-      cy.visit(
-        "https://rarocrud-frontend-88984f6e4454.herokuapp.com/users/novo"
-      );
+     paginaCadastrar.visitarUrl()
     }
   );
 });
 
 When("informar o novo nome", function () {
-  cy.get("#name").type(usuario.name, { delay: 0 });
+  paginaCadastrar.typeNome(usuario.name)
 });
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
+  //cy.get("#email").type(novoEmail);
 });
 
 When("confirmar a operação", function () {
@@ -46,7 +47,7 @@ When("eu informar o novo nome com mais de 100 caracteres", function () {
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail, { delay: 0 });
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -68,7 +69,7 @@ When("eu informar o novo nome com 100 caracteres", function () {
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail, { delay: 0 });
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -89,7 +90,7 @@ When("eu informar o novo nome com menos de 4 caracteres", function () {
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -111,7 +112,7 @@ When("eu informar o novo nome com 4 caracteres", function () {
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -133,7 +134,7 @@ When("eu informar o novo nome com caracteres numéricos", function () {
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -155,7 +156,7 @@ When("eu informar o novo nome com caracteres alfanuméricos", function () {
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -177,7 +178,7 @@ When("eu informar o novo nome com caracteres especiais", function () {
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -202,7 +203,7 @@ When(
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -224,7 +225,7 @@ When("eu deixar o campo nome vazio", function () {
 
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -241,7 +242,7 @@ Then(
 );
 
 When("eu informar o novo nome", function () {
-  cy.get("#name").type(usuario.name);
+  paginaCadastrar.typeNome(usuario.name)
 });
 
 When("informar o novo email sem a presença de um @", function () {
@@ -262,7 +263,7 @@ Then(
 );
 
 When("informar o novo nome", function () {
-  cy.get("#name").type(usuario.name, { delay: 0 });
+  paginaCadastrar.typeNome(usuario.name)
 });
 
 When("informar o novo email com mais de 60 caracteres", function () {
@@ -286,7 +287,7 @@ Then(
 );
 
 When("eu informar o novo nome", function () {
-  cy.get("#name").type(usuario.name);
+  paginaCadastrar.typeNome(usuario.name)
 });
 
 When("informar o novo email com 60 caracteres", function () {
@@ -307,7 +308,7 @@ Then(
 );
 
 When("eu informar o novo nome", function () {
-  cy.get("#name").type(usuario.name);
+  paginaCadastrar.typeNome(usuario.name)
 });
 
 When("informar o novo email com menos de 4 caracteres", function () {
@@ -333,7 +334,7 @@ When("eu informar o novo nome contendo espaçamentos", function () {
 
 When("o novo email", function () {
   novoEmail = faker.internet.email();
-  cy.get("#email").type(novoEmail);
+  paginaCadastrar.typeEmail(novoEmail)
 });
 
 When("confirmar a operação", function () {
@@ -350,7 +351,7 @@ Then(
 );
 
 When("eu informar o novo nome", function () {
-  cy.get("#name").type(usuario.name);
+  paginaCadastrar.typeNome(usuario.name)
 });
 
 When("informar o novo email com mais de 4 caracteres", function () {
@@ -374,7 +375,7 @@ Then(
 );
 
 When("eu informar o novo nome", function () {
-  cy.get("#name").type(usuario.name);
+  paginaCadastrar.typeNome(usuario.name)
 });
 
 When("o campo email se encontrar vazio", function () {
