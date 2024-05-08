@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("createUser",function (name, email){
+    cy.get(".sc-gEvEer").click();
+      cy.get("#name").type(name);
+      cy.get("#email").type(email);
+      cy.get(".sc-dAlyuH").click();
+})
