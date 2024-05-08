@@ -25,7 +25,7 @@ When("selecionar a opção editar", function () {
 
 When("editar o email do usuário", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("incluir um novo nome", function () {
@@ -81,7 +81,7 @@ When(
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("salvar as alterações", function () {
@@ -107,7 +107,7 @@ When("selecionar a opção editar", function () {
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("informar um novo nome com 100 caracteres", function () {
@@ -141,7 +141,7 @@ When("selecionar a opção editar", function () {
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("incluir um novo nome com menos de 4 caracteres", function () {
@@ -175,7 +175,7 @@ When("selecionar a opção editar", function () {
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("incluir um novo nome com 4 caracteres", function () {
@@ -209,7 +209,7 @@ When("selecionar a opção editar", function () {
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("incluir um novo nome com caracteres numéricos", function () {
@@ -241,7 +241,7 @@ When("selecionar a opção editar", function () {
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("incluir um novo nome com caracteres alfanuméricos", function () {
@@ -273,7 +273,7 @@ When("selecionar a opção editar", function () {
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("incluir um novo nome com caracteres especiais", function () {
@@ -305,7 +305,7 @@ When("selecionar a opção editar", function () {
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-  cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When(
@@ -340,7 +340,7 @@ When("selecionar a opção editar", function () {
 
 When("informar um novo email", function () {
   newEmail = faker.internet.email();
-    cy.get("#userEmail").clear().type(newEmail, { delay: 0 });
+  paginaAtualizar.typeEmail(newEmail)
 });
 
 When("deixar o campo nome vazio", function () {

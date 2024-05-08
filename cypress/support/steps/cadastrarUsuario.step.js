@@ -25,7 +25,6 @@ When("informar o novo nome", function () {
 When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   paginaCadastrar.typeEmail(novoEmail)
-  //cy.get("#email").type(novoEmail);
 });
 
 When("confirmar a operação", function () {
