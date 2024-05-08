@@ -1,7 +1,7 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 const { faker } = require("@faker-js/faker");
 const usuario = {
-  name: `${faker.person.firstName()} Teste`,
+  name: `${faker.person.firstName()}Teste`,
   email: "",
 };
 
@@ -32,7 +32,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  "deve exibir a mensagem de sucesso: Usuário salvo com sucesso!",
   function () {
     cy.get(".go3958317564")
       .contains("Usuário salvo com sucesso!")
@@ -54,7 +54,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Informe no máximo 100 caracteres para o nome",
+  "deve exibir a mensagem de alerta: Informe no máximo 100 caracteres para o nome",
   function () {
     cy.get(".sc-cPiKLX")
       .contains("Informe no máximo 100 caracteres para o nome")
@@ -75,7 +75,7 @@ When("confirmar a operação", function () {
   cy.get("button[type='submit']").click();
 });
 Then(
-  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  "deve exibir a mensagem de sucesso: Usuário salvo com sucesso!",
   function () {
     cy.get(".go3958317564")
       .contains("Usuário salvo com sucesso!")
@@ -97,7 +97,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Informe pelo menos 4 letras para o nome",
+  "deve exibir a mensagem de alerta: Informe pelo menos 4 letras para o nome",
   function () {
     cy.get(".sc-cPiKLX")
       .contains("Informe pelo menos 4 letras para o nome.")
@@ -119,7 +119,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  "deve exibir a mensagem de sucesso: Usuário salvo com sucesso!",
   function () {
     cy.get(".go3958317564")
       .contains("Usuário salvo com sucesso!")
@@ -141,7 +141,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Formato do nome é inválido.",
+  "deve exibir a mensagem de alerta: Formato do nome é inválido.",
   function () {
     cy.get(":nth-child(3) > .sc-cPiKLX")
       .contains("Formato do nome é inválido.")
@@ -163,7 +163,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Formato do nome é inválido.",
+  "deve exibir a mensagem de alerta: Formato do nome é inválido.",
   function () {
     cy.get(":nth-child(3) > .sc-cPiKLX")
       .contains("Formato do nome é inválido.")
@@ -185,7 +185,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Formato do nome é inválido.",
+  "deve exibir a mensagem de alerta: Formato do nome é inválido.",
   function () {
     cy.get(":nth-child(3) > .sc-cPiKLX")
       .contains("Formato do nome é inválido.")
@@ -210,7 +210,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Formato do nome é inválido.",
+  "deve exibir a mensagem de alerta: Formato do nome é inválido.",
   function () {
     cy.get(":nth-child(3) > .sc-cPiKLX")
       .contains("Formato do nome é inválido.")
@@ -232,7 +232,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: O campo nome é obrigatório.",
+  "deve exibir a mensagem de alerta: O campo nome é obrigatório.",
   function () {
     cy.get(".sc-jEACwC")
       .contains("Informe pelo menos 4 letras para o nome.")
@@ -253,7 +253,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Formato de e-mail inválido.",
+  "deve exibir a mensagem de alerta: Formato de e-mail inválido.",
   function () {
     cy.get(".sc-cPiKLX")
       .contains("Formato de e-mail inválido")
@@ -277,7 +277,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deverá exibir mensagem de alerta: Formato de e-mail inválido",
+  "deverá exibir a mensagem de alerta: Formato de e-mail inválido",
   function () {
     cy.get(".sc-cPiKLX")
       .contains("Informe no máximo 60 caracteres para o e-mail")
@@ -298,7 +298,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  "deve exibir a mensagem de sucesso: Usuário salvo com sucesso!",
   function () {
     cy.get(".go3958317564")
       .contains("Usuário salvo com sucesso!")
@@ -319,7 +319,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Informe pelo menos 4 caracteres para o e-mail.",
+  "deve exibir a mensagem de alerta: Informe pelo menos 4 caracteres para o e-mail.",
   function () {
     cy.get(".sc-jEACwC")
       .contains("Informe pelo menos 4 caracteres para o e-mail.")
@@ -331,7 +331,7 @@ When("eu informar o novo nome contendo espaçamentos", function () {
   cy.get("#name").type("       Luke Skywalker        ");
 });
 
-When("um novo email", function () {
+When("o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail);
 });
@@ -341,7 +341,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  "deve exibir a mensagem de sucesso: Usuário salvo com sucesso!",
   function () {
     cy.get(".go3958317564")
       .contains("Usuário salvo com sucesso!")
@@ -353,7 +353,7 @@ When("eu informar o novo nome", function () {
   cy.get("#name").type(usuario.name);
 });
 
-When("informar um novo email com mais de 4 caracteres", function () {
+When("informar o novo email com mais de 4 caracteres", function () {
   cy.get("#email").type(
     `${faker.string.alpha(1)}@${faker.string.alpha(1)}.cd`,
     { delay: 0 }
@@ -365,7 +365,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de sucesso: Usuário salvo com sucesso!",
+  "deve exibir a mensagem de sucesso: Usuário salvo com sucesso!",
   function () {
     cy.get(".go3958317564")
       .contains("Usuário salvo com sucesso!")
@@ -377,7 +377,7 @@ When("eu informar o novo nome", function () {
   cy.get("#name").type(usuario.name);
 });
 
-When("o campo email estiver vazio", function () {
+When("o campo email se encontrar vazio", function () {
   cy.get("#email").type(" ", { delay: 0 });
 });
 
@@ -386,7 +386,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: O campo e-mail é obrigatório.",
+  "deve exibir mensagem de alerta: O campo e-mail é obrigatório.",
   function () {
     cy.get(".sc-cPiKLX")
       .contains("O campo e-mail é obrigatório.")
@@ -405,7 +405,7 @@ When("eu informar o novo nome", function () {
 });
 
 When(
-  "informar novamente um email já cadastrado no portal Raro CRUD",
+  "informar novamente o email já cadastrado no portal Raro CRUD",
   function () {
     cy.get("#email").type("thata@gmail.com");
   }
@@ -417,7 +417,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir uma mensagem de alerta: Este e-mail já é utilizado por outro usuário.",
+  "deve exibir a mensagem de alerta: Este e-mail já é utilizado por outro usuário.",
   function () {
     cy.get(".sc-dCFHLb")
       .contains("Este e-mail já é utilizado por outro usuário.")
