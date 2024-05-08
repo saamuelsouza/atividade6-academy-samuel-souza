@@ -40,11 +40,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome com mais de 100 caracteres", function () {
+When("eu informar o novo nome com mais de 100 caracteres", function () {
   cy.get("#name").type(`${faker.string.alpha(101)}`, { delay: 0 });
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail, { delay: 0 });
 });
@@ -62,11 +62,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome com 100 caracteres", function () {
+When("eu informar o novo nome com 100 caracteres", function () {
   cy.get("#name").type(`${faker.string.alpha(100)}`, { delay: 0 });
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail, { delay: 0 });
 });
@@ -83,11 +83,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome com menos de 4 caracteres", function () {
+When("eu informar o novo nome com menos de 4 caracteres", function () {
   cy.get("#name").type(`${faker.string.alpha(3)}`, { delay: 0 });
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail);
 });
@@ -105,11 +105,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome com 4 caracteres", function () {
+When("eu informar o novo nome com 4 caracteres", function () {
   cy.get("#name").type(`${faker.string.alpha(4)}`, { delay: 0 });
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail);
 });
@@ -127,11 +127,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome com caracteres numéricos", function () {
+When("eu informar o novo nome com caracteres numéricos", function () {
   cy.get("#name").type("12345");
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail);
 });
@@ -149,11 +149,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome com caracteres alfanuméricos", function () {
+When("eu informar o novo nome com caracteres alfanuméricos", function () {
   cy.get("#name").type("abc123");
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail);
 });
@@ -171,11 +171,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome com caracteres especiais", function () {
+When("eu informar o novo nome com caracteres especiais", function () {
   cy.get("#name").type("#$&*%@#$%");
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail);
 });
@@ -194,13 +194,13 @@ Then(
 );
 
 When(
-  "eu informar um novo nome com caracteres comuns e especiais juntos",
+  "eu informar o novo nome com caracteres comuns e especiais juntos",
   function () {
     cy.get("#name").type("abc#$amu&l");
   }
 );
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail);
 });
@@ -222,7 +222,7 @@ When("eu deixar o campo nome vazio", function () {
   cy.get("#name").type(" ");
 });
 
-When("informar um novo email", function () {
+When("informar o novo email", function () {
   novoEmail = faker.internet.email();
   cy.get("#email").type(novoEmail);
 });
@@ -240,11 +240,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome", function () {
+When("eu informar o novo nome", function () {
   cy.get("#name").type(usuario.name);
 });
 
-When("informar um novo email sem a presença de um @", function () {
+When("informar o novo email sem a presença de um @", function () {
   cy.get("#email").type("faltaarroba.com", { delay: 0 });
 });
 
@@ -261,11 +261,11 @@ Then(
   }
 );
 
-When("informar um novo nome", function () {
+When("informar o novo nome", function () {
   cy.get("#name").type(usuario.name, { delay: 0 });
 });
 
-When("informar um novo email com mais de 60 caracteres", function () {
+When("informar o novo email com mais de 60 caracteres", function () {
   cy.get("#email").type(
     `${faker.string.alpha(25)}@${faker.string.alpha(31)}.com`,
     { delay: 0 }
@@ -285,11 +285,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome", function () {
+When("eu informar o novo nome", function () {
   cy.get("#name").type(usuario.name);
 });
 
-When("informar um novo email com 60 caracteres", function () {
+When("informar o novo email com 60 caracteres", function () {
   cy.get("#email").type(`${faker.string.alpha(50)}@gmail.com`, { delay: 0 });
 });
 
@@ -306,11 +306,11 @@ Then(
   }
 );
 
-When("eu informar um novo nome", function () {
+When("eu informar o novo nome", function () {
   cy.get("#name").type(usuario.name);
 });
 
-When("informar um novo email com menos de 4 caracteres", function () {
+When("informar o novo email com menos de 4 caracteres", function () {
   cy.get("#email").type("abc", { delay: 0 });
 });
 
@@ -327,7 +327,7 @@ Then(
   }
 );
 
-When("eu informar um novo nome contendo espaçamentos", function () {
+When("eu informar o novo nome contendo espaçamentos", function () {
   cy.get("#name").type("       Luke Skywalker        ");
 });
 
@@ -349,7 +349,7 @@ Then(
   }
 );
 
-When("eu informar um novo nome", function () {
+When("eu informar o novo nome", function () {
   cy.get("#name").type(usuario.name);
 });
 
@@ -373,7 +373,7 @@ Then(
   }
 );
 
-When("eu informar um novo nome", function () {
+When("eu informar o novo nome", function () {
   cy.get("#name").type(usuario.name);
 });
 
@@ -394,7 +394,7 @@ Then(
   }
 );
 
-When("eu informar um novo nome", function () {
+When("eu informar o novo nome", function () {
   cy.intercept("POST", "/api/v1/users", {
     statusCode: 422,
     body: {
