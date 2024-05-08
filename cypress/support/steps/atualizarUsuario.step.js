@@ -11,7 +11,7 @@ var newEmail;
 
 beforeEach(() => {
   Given("que eu acesse a lista de usuários do portal Raro CRUD", function () {
-    cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users");
+    paginaAtualizar.visitarUrl()
   });
 });
 

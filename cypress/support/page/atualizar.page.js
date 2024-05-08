@@ -14,5 +14,9 @@ export default class AtualizarPage {
     clickButtonSalvar () {
         cy.get(this.buttonSalvar).click()
     }
+
+    visitarUrl () {
+        cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users");
+    }
     
     }
