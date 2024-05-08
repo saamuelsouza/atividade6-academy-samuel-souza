@@ -417,7 +417,7 @@ When("confirmar a operação", function () {
 });
 
 Then(
-  "deve exibir a mensagem de alerta: Este e-mail já é utilizado por outro usuário.",
+  "deverá exibir  mensagem de alerta: Este e-mail já é utilizado por outro usuário.",
   function () {
     cy.get(".sc-dCFHLb")
       .contains("Este e-mail já é utilizado por outro usuário.")

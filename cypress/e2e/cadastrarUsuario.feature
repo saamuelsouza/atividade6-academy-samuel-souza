@@ -114,4 +114,4 @@ Cenário: Não deve cadastrar um usuário quando o email já  estiver sendo util
 Quando eu informar o novo nome
 E informar novamente o email já cadastrado no portal Raro CRUD
 E confirmar a operação
-Então deve exibir a mensagem de alerta: Este e-mail já é utilizado por outro usuário.
+Então deverá exibir  mensagem de alerta: Este e-mail já é utilizado por outro usuário.
