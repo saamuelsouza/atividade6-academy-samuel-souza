@@ -2,6 +2,7 @@ export default class AtualizarPage {
     inputNome = '#userName'
     inputEmail = '#userEmail'
     buttonSalvar = '.dGvNqp > .sc-dAlyuH'
+    verDetalhes = ':nth-child(1) > .sc-feUZmu > #userDataDetalhe'
     
     typeNome (nome) {
         cy.get(this.inputNome).type(nome)
