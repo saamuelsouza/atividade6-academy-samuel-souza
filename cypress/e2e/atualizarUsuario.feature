@@ -91,7 +91,7 @@ E selecionar a opção editar
 E informar um novo email
 E deixar o campo nome vazio
 E salvar as alterações
-Então deve exibir uma mensagem de alerta: O campo nome é obrigatório.
+Então deve exibir uma mensagem de alerta: Informe pelo menos 4 letras para o nome.
 
 Cenário: Não deve atualizar usuário quando o email não possuir um @
 Quando eu selecionar a opção ver detalhes
@@ -107,7 +107,7 @@ E selecionar a opção editar
 E informar um novo email com mais de 60 caracteres
 E incluir um novo nome
 E salvar as alterações
-Então deverá exibir mensagem de alerta: Formato de e-mail inválido
+Então deverá exibir mensagem de alerta: Informe no máximo 60 caracteres para o e-mail
 
 Cenário: Deve atualizar usuário cujo email possua 60 caracteres
 Quando eu selecionar a opção ver detalhes
